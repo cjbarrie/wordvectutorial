@@ -409,7 +409,7 @@ write.csv(glove_embedding, "data/wordembed/glove_embedding.csv", row.names = TRU
 
 In order to visualize your own embeddings in 3D, you can use a tool like Python's `tensorboard`. The bonus materials in "2-visualize_embeddings.py" walk you through how to achieve that. 
 
-Alternatively, you can visit [here](https://projector.tensorflow.org/) to see an example of one of these 3D projections. 
+Alternatively, you can visit [here](https://projector.tensorflow.org/) to see an example of one of these 3D projections. You can download the embedding you will need (too big for Github) [here](https://www.dropbox.com/scl/fi/y0u3qwem1yxno1lxmjq2r/glove_embedding.csv?rlkey=00vxah2lz4l7qj5n3edk9t0t2&dl=0).
 
 ## Exercises
 
