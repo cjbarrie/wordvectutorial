@@ -3,4 +3,4 @@
 .RData
 .Ruserdata
 .DS_Store
-data/wordembed/glove_embedding.csv
+data/wordembed/glove_embedding.csv 
