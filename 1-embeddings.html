@@ -402,8 +402,7 @@ library(ggthemes) # to make your plots look nice
 library(quanteda) # for transforming and tokenizing text
 library(text2vec) # for word embedding implementation
 library(widyr) # for reshaping the text data
-library(irlba) # for svd
-library(umap) # for dimensionality reduction</code></pre>
+library(irlba) # for svd</code></pre>
 <p>We begin by reading in the data. These data come from a sample of 1m
 tweets by elected UK MPs over the period 2017-2019. The data contain
 just the name of the MP-user, the text of the tweet, and the MP’s party.
@@ -862,6 +861,12 @@ words close in vector space to the word economy seem to be generally
 semantically related. Others are a bit further, e.g., “is” and “will,”
 demonstrating that we need to further refine our approach to extracting
 meaning from these objects.</p>
+<pre class="r"><code>write.csv(glove_embedding, &quot;data/wordembed/glove_embedding.csv&quot;, row.names = TRUE)</code></pre>
+<p>In order to visualize your own embeddings in 3D, you can use a tool
+like Python’s <code>tensorboard</code>. The bonus materials in
+“2-visualize_embeddings.py” walk you through how to achieve that.</p>
+<p>Alternatively, you can visit <a href="https://projector.tensorflow.org/">here</a> to see an example of
+one of these 3D projections.</p>
 </div>
 <div id="exercises" class="section level2">
 <h2>Exercises</h2>
