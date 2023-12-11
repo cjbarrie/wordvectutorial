@@ -32,7 +32,15 @@ library(irlba) # for svd
 
 We begin by reading in the data. These data come from a sample of 1m tweets by elected UK MPs over the period 2017-2019. The data contain just the name of the MP-user, the text of the tweet, and the MP's party. We then just add an ID variable called "postID."
 
-```{r}
+```{r, eval = F}
+twts_sample <- readRDS("twts_corpus_sample.rds")
+
+#create tweet id
+twts_sample$postID <- row.names(twts_sample)
+
+```
+
+```{r, echo = F}
 twts_sample <- readRDS("data/wordembed/twts_corpus_sample.rds")
 
 #create tweet id
@@ -366,7 +374,7 @@ wv_main <- glove$fit_transform(
 wv_context <- glove$components
 glove_embedding <- wv_main + t(wv_context)
 
-saveRDS(glove_embedding, file = "data/wordembed/local_glove.rds")
+saveRDS(glove_embedding, file = "local_glove.rds")
 
 ```
 
@@ -402,6 +410,12 @@ select
 We can see, here, then that our embeddings seem to make sense. The words close in vector space to the word economy seem to be generally semantically related. Others are a bit further, e.g., "is" and "will," demonstrating that we need to further refine our approach to extracting meaning from these objects.
 
 ```{r, eval =FALSE}
+
+write.csv(glove_embedding, "glove_embedding.csv", row.names = TRUE)
+
+```
+
+```{r, eval =FALSE, echo = F}
 
 write.csv(glove_embedding, "data/wordembed/glove_embedding.csv", row.names = TRUE)
 

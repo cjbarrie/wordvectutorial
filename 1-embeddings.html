@@ -407,7 +407,7 @@ library(irlba) # for svd</code></pre>
 tweets by elected UK MPs over the period 2017-2019. The data contain
 just the name of the MP-user, the text of the tweet, and the MP’s party.
 We then just add an ID variable called “postID.”</p>
-<pre class="r"><code>twts_sample &lt;- readRDS(&quot;data/wordembed/twts_corpus_sample.rds&quot;)
+<pre class="r"><code>twts_sample &lt;- readRDS(&quot;twts_corpus_sample.rds&quot;)
 
 #create tweet id
 twts_sample$postID &lt;- row.names(twts_sample)</code></pre>
@@ -813,7 +813,7 @@ wv_main &lt;- glove$fit_transform(
 wv_context &lt;- glove$components
 glove_embedding &lt;- wv_main + t(wv_context)
 
-saveRDS(glove_embedding, file = &quot;data/wordembed/local_glove.rds&quot;)</code></pre>
+saveRDS(glove_embedding, file = &quot;local_glove.rds&quot;)</code></pre>
 <p><strong>To save time when working through this tutorial, you may also
 download the resulting embedding from the Github repo with</strong>:</p>
 <pre class="r"><code>url &lt;- &quot;https://github.com/cjbarrie/wordvectutorial/blob/main/data/wordembed/local_glove.rds?raw=true&quot;
@@ -861,12 +861,13 @@ words close in vector space to the word economy seem to be generally
 semantically related. Others are a bit further, e.g., “is” and “will,”
 demonstrating that we need to further refine our approach to extracting
 meaning from these objects.</p>
-<pre class="r"><code>write.csv(glove_embedding, &quot;data/wordembed/glove_embedding.csv&quot;, row.names = TRUE)</code></pre>
+<pre class="r"><code>write.csv(glove_embedding, &quot;glove_embedding.csv&quot;, row.names = TRUE)</code></pre>
 <p>In order to visualize your own embeddings in 3D, you can use a tool
 like Python’s <code>tensorboard</code>. The bonus materials in
 “2-visualize_embeddings.py” walk you through how to achieve that.</p>
 <p>Alternatively, you can visit <a href="https://projector.tensorflow.org/">here</a> to see an example of
-one of these 3D projections.</p>
+one of these 3D projections. You can download the embedding you will
+need (too big for Github) <a href="https://www.dropbox.com/scl/fi/y0u3qwem1yxno1lxmjq2r/glove_embedding.csv?rlkey=00vxah2lz4l7qj5n3edk9t0t2&amp;dl=0">here</a>.</p>
 </div>
 <div id="exercises" class="section level2">
 <h2>Exercises</h2>
